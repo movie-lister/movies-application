@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 </head>
 <body>
-
+<!-- main body container -->
     <div id="page-wrapper" class="container">
         <div class="se-pre-con"></div>
         <div class="row">
@@ -19,14 +19,45 @@
                 <img class=" col s12 loading-gif" src="loading.gif">
                 <div id="html-builder" class="col s12">
                 <!--this will be populated by js via $('#html-builder').html()-->
-             </div>
+                </div>
             <!--button to add movie or open form-->
             </div>
-            </div>
-
+        </div>
+        <!-- text input for movie title -->
+        <div class="row">
+            <form id="movie-form" method="post" action="/db.json" class="col s12 ">
+                <div class="row ">
+                    <div class="input-field col s6">
+                        <input id="movie-title" type="text" data-length="10">
+                        <label for="movie-title">Enter Movie Title</label>
+                    </div>
+                </div>
+                <!--rating selection-->
+                <div class="input-field col s6">
+                    <select class="browser-default" id="movie-rating">
+                        <option value="">Leave a rating</option>
+                        <option value="1">1 star</option>
+                        <option value="2">2 star</option>
+                        <option value="3">3 star</option>
+                        <option value="3">4 star</option>
+                        <option value="3">5 star</option>
+                    </select>
+                    <!--<label>Materialize Select</label>-->
+                </div>
+                <button id="submit-button" class="btn">submit</button>
+            </form>
         </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <!-- ** main body container end ** -->
+    </div>
+
     <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    </script>
 </body>
 </html>
