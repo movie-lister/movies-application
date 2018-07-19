@@ -13,8 +13,16 @@ sayHello('World');
 
 const {getMovies} = require('./api.js');
 
+$(document).ready(function(){
+    $(document).ajaxStart(function(){
+        $(".loading-gif").css("display", "block");
+    });
+
+});
+
 getMovies().then((movies) => {
 // console.log(`id#${id} - ${title} - rating: ${rating}`)
+    $(".loading-gif").css("display", "none");
 
 
     let htmlBuilder = '<table id="movie-list">';
@@ -22,7 +30,7 @@ getMovies().then((movies) => {
     htmlBuilder += '<tr>';
     htmlBuilder+= '<th>Film</th>';
     htmlBuilder += '<th>Rating</th>';
-    htmlBuilder += '<th>Option</th>';
+    htmlBuilder += '<th>Options</th>';
     htmlBuilder += '</tr>';
     htmlBuilder += '</thead>';
 
@@ -35,7 +43,6 @@ getMovies().then((movies) => {
             `<i class="far fa-trash-alt" data-id="${id}"></i></td>` +
             `<i class="far fa-trash-alt" data-id="${id}"></i></td>` +
             `</tr>`
-
 
 
     });
