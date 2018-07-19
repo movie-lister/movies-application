@@ -11,7 +11,6 @@ sayHello('World');
  * require style imports
  */
 
-// work dangit
 const {getMovies} = require('./api.js');
 
 getMovies().then((movies) => {
@@ -41,7 +40,7 @@ getMovies().then((movies) => {
 
     });
     htmlBuilder += '</table>';
-    $('.container').html(htmlBuilder);
+    $('#html-builder').html(htmlBuilder);
 
 }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.')

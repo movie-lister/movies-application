@@ -5,19 +5,24 @@
     <title>My Application</title>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 </head>
 <body>
-<div id="page-wrapper">
-    <h1 id="main-title">Movie Lister</h1>
-    <div class="container">
-        <!--this will be populated by js via $('.container').html()-->
-    </div>
 
-    <!--button to add movie or open form-->
-
-</div>
-
-<script src="main.js"></script>
-
+    <div id="page-wrapper" class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 id="main-title">Movie Lister</h1>
+            </div>
+            <div class="col s12">
+                <div id="html-builder" class="col s12">
+                <!--this will be populated by js via $('.container').html()-->
+             </div>
+            <!--button to add movie or open form-->
+            </div>
+            </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
