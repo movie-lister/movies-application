@@ -3,9 +3,7 @@ html, body {
     /*background-color: papayawhip;*/
 }
 
-#html-builder {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    text-align: center;
+.loading-gif {
+    display: block;
+    height: auto;
 }
