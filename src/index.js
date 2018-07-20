@@ -121,93 +121,32 @@ $('.container').on('click', '#delete-button', function(e){
 
 // Edit button functionality \\
 
-// $('.container').on('click', '#edit-button', function(e){
-//     // include animate loading gif
-//     console.log("clicked");
-//     let id = $(this).attr('data-id');
-//     console.log(id);
-//
-//     fetch(`/api/movies/${id}` , {
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         method: "PUT",
-//         body: JSON.stringify({id})
-//
-//     }).then((response) => {
-//         response.json();
-//     }).then(() => {
-//         generateMovieList();
-//     });
-// });
-
-// ** current edit button ** \\
-
-$('.container').on('click', '.edit-button' , function() {
-
-    let id = $(this).attr('data-id');
-    console.log(id);
-
-
-   $('.edit-rating').css('display', 'block');
-    // fetch movie by id to edit rating
-
-    fetch(`/api/movies/${id}` , {
-        headers: {
-            "content-type": "application/json"
-        },
-        method: "GET",
-        body: JSON.stringify({id})
-
-    }).then((response) => {
-        response.json();
-    }).then(() => {
-        // generateMovieList();
-    });
-});
-
-
 // select change event for when a new rating is picked \\
 $('.container').on('change', '.edit-rating', function(e){
    // console.log('test');
     let rating = $(this).val();
     let id = $(this).attr("data-id");
+    let title = $('#tdTitle').val();
     console.log(id);
     console.log(rating);
+    console.log(title);
 
-    // fetch(`/api/movies/${id}` , {
-    //     headers: {
-    //         "content-type": "application/json"
-    //     },
-    //     method: "PATCH",
-    //     body: JSON.stringify({id})
-    //
-    // }).then((response) => {
-    //     response.json();
-    // }).then(() => {
-    //     generateMovieList();
-    // });
+    let movie = {
+        title: title,
+        rating: rating
+    };
 
+    fetch(`/api/movies/${id}`, {
+        headers: {
+            "content-type": "application/json"
+        },
+        method: "PATCH",
+        body: JSON.stringify({rating})
 
+    }).then((response) => {
+        response.json();
+    }).then(() => {
+        generateMovieList();
+    });
 
 });
-
-// $('.container').on('click', '#edit-button', function(e){
-//     // include animate loading gif
-//     console.log("clicked");
-//     let id = $(this).attr('data-id');
-//     console.log(id);
-//
-//     fetch(`/api/movies/${id}` , {
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         method: "PUT",
-//         body: JSON.stringify({id})
-//
-//     }).then((response) => {
-//         response.json();
-//     }).then(() => {
-//         generateMovieList();
-//     });
-// });
