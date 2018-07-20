@@ -6,19 +6,9 @@
       "id": 3
     },
     {
-      "title": "Spiderman 3 af",
-      "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i>",
-      "id": 4
-    },
-    {
       "title": "spiderman 4 af",
       "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i>",
       "id": 5
-    },
-    {
-      "title": "spiderman 4 af",
-      "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i>",
-      "id": 6
     }
   ]
 }

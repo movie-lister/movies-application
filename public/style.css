@@ -30,9 +30,20 @@
     src: url("/fonts/The-Sunset.ttf");
 }
 
+@font-face {
+    font-family: "Billionaire";
+    src: url("/fonts/BillionaireMediumGrunge.otf");
+}
+
+@font-face {
+    font-family: "Cinema";
+    src: url("/fonts/Cinematic-Language.ttf");
+}
+
 
 
 html, body {
+    /*-webkit-animation: rotation 12s infinite linear;*/
     background: url('manos-gkikas-422953-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,9 +55,10 @@ html, body {
 }
 
 h1 {
-    font-family: Sunset;
-    font-size: 25px;
+    font-family: Cinema;
+    font-size: 28px;
     letter-spacing: 3px;
+    text-align: center;
 }
 
 .movie-table {
@@ -76,4 +88,13 @@ i {
 
 .hidden {
     display: none;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
 }

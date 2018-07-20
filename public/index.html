@@ -15,7 +15,7 @@
         <div class="row">
             <!-- main page header -->
             <div class="col s12">
-                <h1 id="main-title brand-logo center">Movie Lister</h1>
+                <h1 id="main-title brand-logo centered">MOVIE LISTER</h1>
             </div>
             <!-- pre-loading gif container-->
             <div class="movie-table centered col s12">
@@ -29,24 +29,25 @@
         <div class="row">
             <form id="movie-form" method="post" action="../db.json" class="col s12 ">
                 <div class="row ">
-                    <div class="input-field col s6">
+                    <div class="input-field col s8">
                         <input id="movie-title" type="text" data-length="10">
                         <label for="movie-title">Enter Movie Title</label>
                     </div>
+                    <!--rating selection-->
+                    <div class="input-field centered col s4">
+                        <select class="browser-default" id="movie-rating">
+                            <option value="">Leave a rating</option>
+                            <option value='<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>1 star</option>
+                            <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>2 star</option>
+                            <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>3 star</option>
+                            <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>'>4 star</option>
+                            <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'>5 star</option>
+                        </select>
+                        <!--<label>Materialize Select</label>-->
+                    </div>
                 </div>
-                <!--rating selection-->
-                <div class="input-field centered col s2">
-                    <select class="browser-default" id="movie-rating">
-                        <option value="">Leave a rating</option>
-                        <option value='<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>1 star</option>
-                        <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>2 star</option>
-                        <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>3 star</option>
-                        <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>'>4 star</option>
-                        <option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'>5 star</option>
-                    </select>
-                    <!--<label>Materialize Select</label>-->
-                </div>
-                <button id="submit-button" class="btn">submit</button>
+
+                <button id="submit-button" class="btn col s8">submit</button>
             </form>
         </div>
     <script
