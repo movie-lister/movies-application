@@ -41,8 +41,8 @@ $(document).ready(function(){
                 htmlBuilder += `<td id="tdStars">${rating}</td>`;
                 htmlBuilder += `<td id="tdOptions">`
                     +
-                    `<button id="edit-button" type="submit" data-target="/api/movies"><i class="fas fa-edit" data-id="${id}"></i></button>` +
-                    `<button id="delete-button" type="submit" data-target="/api/movies"><i class="far fa-trash-alt" data-id="${id}"></i></button>` +
+                    `<button id="edit-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="fas fa-edit"></i></button>` +
+                    `<button id="delete-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="far fa-trash-alt"></i></button>` +
                     `</td></tr>`
 
             });
@@ -50,10 +50,15 @@ $(document).ready(function(){
             $('#html-builder').html(htmlBuilder);
 
         }).catch((error) => {
-            alert('Oh no! Something went wrong.\nCheck the console for details.')
+            alert('Oh no! Something went wrong.\nCheck the console for details.');
             console.log(error);
         });
     };
+
+
+    $('#delete-button'.id).on('click', function(){
+        console.log('clicked');
+    });
     generateMovieList();
 
 
@@ -85,3 +90,76 @@ $(document).ready(function(){
     });
 
 // ** submit form to delete functionality ** \\
+$('.container').on('click', '#delete-button', function(e){
+    // include animate loading gif
+    console.log("clicked");
+    let id = $(this).attr('data-id');
+    console.log(id);
+
+    fetch(`/api/movies/${id}` , {
+        headers: {
+            "content-type": "application/json"
+        },
+        method: "DELETE",
+        body: JSON.stringify({id})
+
+    }).then((response) => {
+        response.json();
+    }).then(() => {
+        generateMovieList();
+    });
+});
+
+// Edit button functionality
+
+
+$('.container').on('click', '#edit-button', function(e){
+    // include animate loading gif
+    console.log("clicked");
+    let id = $(this).attr('data-id');
+    console.log(id);
+
+    fetch(`/api/movies/${id}` , {
+        headers: {
+            "content-type": "application/json"
+        },
+        method: "PUT",
+        body: JSON.stringify({id})
+
+
+
+    }).then((response) => {
+        response.json();
+    }).then(() => {
+        generateMovieList();
+    });
+});
+
+
+
+
+
+
+
+
+
+
+// $('.container').on('click', '#edit-button', function(e){
+//     // include animate loading gif
+//     console.log("clicked");
+//     let id = $(this).attr('data-id');
+//     console.log(id);
+//
+//     fetch(`/api/movies/${id}` , {
+//         headers: {
+//             "content-type": "application/json"
+//         },
+//         method: "PUT",
+//         body: JSON.stringify({id})
+//
+//     }).then((response) => {
+//         response.json();
+//     }).then(() => {
+//         generateMovieList();
+//     });
+// });
