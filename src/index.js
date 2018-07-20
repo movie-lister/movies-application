@@ -41,6 +41,14 @@ $(document).ready(function(){
                 htmlBuilder += `<td id="tdStars">${rating}</td>`;
                 htmlBuilder += `<td id="tdOptions">`
                     +
+                    `<select class="browser-default" id="edit-rating">` +
+                        `<option value="">Update rating</option>` +
+                        `<option value="1">1 star</option>` +
+                        `<option value="2">2 star</option>` +
+                        `<option value="3">3 star</option>` +
+                        `<option value="4">4 star</option>` +
+                        `<option value="5">5 star</option>` +
+                    `</select>` +
                     `<button id="edit-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="fas fa-edit"></i></button>` +
                     `<button id="delete-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="far fa-trash-alt"></i></button>` +
                     `</td></tr>`
@@ -55,10 +63,6 @@ $(document).ready(function(){
         });
     };
 
-
-    $('#delete-button'.id).on('click', function(){
-        console.log('clicked');
-    });
     generateMovieList();
 
 
@@ -113,30 +117,30 @@ $('.container').on('click', '#delete-button', function(e){
 // Edit button functionality
 
 
-$('.container').on('click', '#edit-button', function(e){
-    // include animate loading gif
-    console.log("clicked");
-    let id = $(this).attr('data-id');
-    console.log(id);
+// $('.container').on('click', '#edit-button', function(e){
+//     // include animate loading gif
+//     console.log("clicked");
+//     let id = $(this).attr('data-id');
+//     console.log(id);
+//
+//     fetch(`/api/movies/${id}` , {
+//         headers: {
+//             "content-type": "application/json"
+//         },
+//         method: "PUT",
+//         body: JSON.stringify({id})
+//
+//     }).then((response) => {
+//         response.json();
+//     }).then(() => {
+//         generateMovieList();
+//     });
+// });
 
-    fetch(`/api/movies/${id}` , {
-        headers: {
-            "content-type": "application/json"
-        },
-        method: "PUT",
-        body: JSON.stringify({id})
 
-
-
-    }).then((response) => {
-        response.json();
-    }).then(() => {
-        generateMovieList();
-    });
+$('.container').on('click', '#edit-button' ,function() {
+   $('#edit-rating').css('display', 'block')
 });
-
-
-
 
 
 

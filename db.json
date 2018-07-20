@@ -1,22 +1,14 @@
 {
   "movies": [
     {
-      "id": 5
+      "title": "Grandmas Boy",
+      "rating": "3",
+      "id": 1
     },
     {
-      "title": "grandmas boy",
-      "rating": "1",
-      "id": 6
-    },
-    {
-      "title": "grandmas boy",
-      "rating": "1",
-      "id": 7
-    },
-    {
-      "title": "grandmas boy",
-      "rating": "1",
-      "id": 8
+      "title": "Grandmas Boy",
+      "rating": "5",
+      "id": 2
     }
   ]
 }

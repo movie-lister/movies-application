@@ -16,3 +16,7 @@ i {
 #card-image {
     /*background-size: cover;*/
 }
+
+#edit-rating {
+    display: none;
+}
