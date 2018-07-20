@@ -1,3 +1,29 @@
+:root {
+    --black: #3d3d3d;
+    --grey: #4b4b4b;
+    --light-yellow: #fffa65;
+    --yellow: #fff200;
+    --light-red: #ff4d4d;
+    --red: #ff3838;
+    --light-purple: #cd84f1;
+    --purple: #c56cf0;
+    --light-blue: #18dcff;
+    --blue: #17c0eb;
+    --light-green:#32ff7e;
+    --green: #3ae374;
+    --light-gold: #ffaf40;
+    --gold: #ff9f1a;
+    --light-pink: #ffcccc;
+    --pink: #ffb8b8;
+
+
+}
+
+
+
+
+
+
 html, body {
     height: 100%;
     /*background-color: papayawhip;*/
