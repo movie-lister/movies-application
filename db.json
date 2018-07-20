@@ -1,14 +1,30 @@
 {
   "movies": [
     {
-      "title": "Grandmas Boy",
-      "rating": "3",
-      "id": 1
+      "id": 3
     },
     {
-      "title": "Grandmas Boy",
+      "title": "Back to the Future",
+      "rating": "2",
+      "id": 4
+    },
+    {
+      "title": "Star Wars:  A New Hope",
       "rating": "5",
-      "id": 2
+      "id": 5
+    },
+    {
+      "rating": "6",
+      "id": 6
+    },
+    {
+      "rating": "7",
+      "id": 7
+    },
+    {
+      "title": "test movie 4",
+      "rating": "4",
+      "id": 8
     }
   ]
 }

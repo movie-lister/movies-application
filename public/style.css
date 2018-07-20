@@ -17,6 +17,6 @@ i {
     /*background-size: cover;*/
 }
 
-#edit-rating {
+.hidden {
     display: none;
 }
