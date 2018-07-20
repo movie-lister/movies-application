@@ -11,6 +11,9 @@ sayHello('World');
  * require style imports
  */
 
+
+
+
 const {getMovies} = require('./api.js');
 
 $(document).ready(function(){
@@ -38,10 +41,11 @@ $(document).ready(function(){
             movies.forEach(({title, rating, id}) => {
                 //populate the table with json response data
                 htmlBuilder += `<tr><td id="tdTitle">${title}</td>`;
-                htmlBuilder += `<td id="tdStars">${rating}</td>`;
+                htmlBuilder += `<td id="rating-id">${rating}</td>`;
                 htmlBuilder += `<td id="tdOptions">`
+                    // hidden options to update movie rating, triggered once 'edit' btn is clicked' \\
                     +
-                    `<select class="browser-default" id="edit-rating">` +
+                    `<select class="browser-default edit-rating" data-id="${id}">` +
                         `<option value="">Update rating</option>` +
                         `<option value="1">1 star</option>` +
                         `<option value="2">2 star</option>` +
@@ -49,7 +53,7 @@ $(document).ready(function(){
                         `<option value="4">4 star</option>` +
                         `<option value="5">5 star</option>` +
                     `</select>` +
-                    `<button id="edit-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="fas fa-edit"></i></button>` +
+                    `<button class="edit-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="fas fa-edit"></i></button>` +
                     `<button id="delete-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="far fa-trash-alt"></i></button>` +
                     `</td></tr>`
 
@@ -67,10 +71,10 @@ $(document).ready(function(){
 
 
     // ** submit form to post functionality ** \\
-    // ratings of only 1-3 are recorded?
+
     $('#submit-button').on('click', function(e){
         e.preventDefault();
-       // include animate loading gif
+       // include animate loading gif to show once a movie is added \\
        let title = $('#movie-title').val();
        let rating = $('#movie-rating').val();
 
@@ -93,7 +97,8 @@ $(document).ready(function(){
        });
     });
 
-// ** submit form to delete functionality ** \\
+// **  delete movie entry ** \\
+
 $('.container').on('click', '#delete-button', function(e){
     // include animate loading gif
     console.log("clicked");
@@ -114,8 +119,7 @@ $('.container').on('click', '#delete-button', function(e){
     });
 });
 
-// Edit button functionality
-
+// Edit button functionality \\
 
 // $('.container').on('click', '#edit-button', function(e){
 //     // include animate loading gif
@@ -137,16 +141,56 @@ $('.container').on('click', '#delete-button', function(e){
 //     });
 // });
 
+// ** current edit button ** \\
 
-$('.container').on('click', '#edit-button' ,function() {
-   $('#edit-rating').css('display', 'block')
+$('.container').on('click', '.edit-button' , function() {
+
+    let id = $(this).attr('data-id');
+    console.log(id);
+
+
+   $('.edit-rating').css('display', 'block');
+    // fetch movie by id to edit rating
+
+    fetch(`/api/movies/${id}` , {
+        headers: {
+            "content-type": "application/json"
+        },
+        method: "GET",
+        body: JSON.stringify({id})
+
+    }).then((response) => {
+        response.json();
+    }).then(() => {
+        // generateMovieList();
+    });
 });
 
 
+// select change event for when a new rating is picked \\
+$('.container').on('change', '.edit-rating', function(e){
+   // console.log('test');
+    let rating = $(this).val();
+    let id = $(this).attr("data-id");
+    console.log(id);
+    console.log(rating);
+
+    // fetch(`/api/movies/${id}` , {
+    //     headers: {
+    //         "content-type": "application/json"
+    //     },
+    //     method: "PATCH",
+    //     body: JSON.stringify({id})
+    //
+    // }).then((response) => {
+    //     response.json();
+    // }).then(() => {
+    //     generateMovieList();
+    // });
 
 
 
-
+});
 
 // $('.container').on('click', '#edit-button', function(e){
 //     // include animate loading gif
