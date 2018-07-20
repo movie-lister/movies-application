@@ -19,14 +19,39 @@
 
 }
 
+@font-face {
+    font-family: "Pistara";
+    src: url("/fonts/Pistara.otf");
 
+}
 
+@font-face {
+    font-family: "Sunset";
+    src: url("/fonts/The-Sunset.ttf");
+}
 
 
 
 html, body {
+    background: url('manos-gkikas-422953-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     /*background-color: papayawhip;*/
+    color: white;
+    letter-spacing: 3px;
+
+}
+
+h1 {
+    font-family: Sunset;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.movie-table {
+    border: 3px solid var(--grey);
+    background: var(--black);
 }
 
 .loading-gif {
@@ -36,7 +61,13 @@ html, body {
 
 /* spacing for option widgets*/
 i {
-    margin: 5px;
+    margin: 10px;
+}
+
+.movie-table {
+    font-family: Pistara;
+    font-size: 25px;
+    letter-spacing: 2px;
 }
 
 #card-image {

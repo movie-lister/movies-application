@@ -28,8 +28,10 @@ $(document).ready(function(){
         // console.log(`id#${id} - ${title} - rating: ${rating}`)
             $(".loading-gif").css("display", "none");
 
+            let oneStar = `<i class="far fa-star"></i>`;
 
-            let htmlBuilder = '<table id="movie-list">';
+
+            let htmlBuilder = '<table class="centered" id="movie-list">';
             htmlBuilder += '<thead>';
             htmlBuilder += '<tr>';
             htmlBuilder+= '<th>Film</th>';
@@ -45,13 +47,13 @@ $(document).ready(function(){
                 htmlBuilder += `<td id="tdOptions">`
                     // hidden options to update movie rating, triggered once 'edit' btn is clicked' \\
                     +
-                    `<select class="browser-default edit-rating" data-id="${id}">` +
+                    `<select class="browser-default edit-rating" style="display: none" data-id=${id}>` +
                         `<option value="">Update rating</option>` +
-                        `<option value="1">1 star</option>` +
-                        `<option value="2">2 star</option>` +
-                        `<option value="3">3 star</option>` +
-                        `<option value="4">4 star</option>` +
-                        `<option value="5">5 star</option>` +
+                        `<option value='<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>1 star</option>` +
+                        `<option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>2 star</option>` +
+                        `<option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'>3 star</option>` +
+                        `<option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>'>4 star</option>` +
+                        `<option value='<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'>5 star</option>` +
                     `</select>` +
                     `<button class="edit-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="fas fa-edit"></i></button>` +
                     `<button id="delete-button" type="submit" data-target="/api/movies" data-id="${id}"><i class="far fa-trash-alt"></i></button>` +
@@ -69,7 +71,6 @@ $(document).ready(function(){
 
     generateMovieList();
 
-
     // ** submit form to post functionality ** \\
 
     $('#submit-button').on('click', function(e){
@@ -77,7 +78,6 @@ $(document).ready(function(){
        // include animate loading gif to show once a movie is added \\
        let title = $('#movie-title').val();
        let rating = $('#movie-rating').val();
-
        let movie = {
            title: title,
            rating: rating
@@ -96,6 +96,10 @@ $(document).ready(function(){
            generateMovieList();
        });
     });
+
+
+
+
 
 // **  delete movie entry ** \\
 
@@ -120,6 +124,10 @@ $('.container').on('click', '#delete-button', function(e){
 });
 
 // Edit button functionality \\
+
+$('.container').on('click', '.edit-button', function(){
+    $(this).prev().toggle();
+});
 
 // select change event for when a new rating is picked \\
 $('.container').on('change', '.edit-rating', function(e){
@@ -150,3 +158,5 @@ $('.container').on('change', '.edit-rating', function(e){
     });
 
 });
+
+
