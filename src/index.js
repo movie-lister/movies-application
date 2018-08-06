@@ -28,9 +28,6 @@ $(document).ready(function(){
         // console.log(`id#${id} - ${title} - rating: ${rating}`)
             $(".loading-gif").css("display", "none");
 
-            let oneStar = `<i class="far fa-star"></i>`;
-
-
             let htmlBuilder = '<table class="centered" id="movie-list">';
             htmlBuilder += '<thead>';
             htmlBuilder += '<tr>';

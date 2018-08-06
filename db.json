@@ -2,12 +2,17 @@
   "movies": [
     {
       "title": "Spiderman 3 af",
-      "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i>",
+      "rating": "<i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i>",
       "id": 3
     },
     {
-      "title": "spiderman 4 af",
-      "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i>",
+      "title": "Spoderman 2 ",
+      "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i>",
+      "id": 4
+    },
+    {
+      "title": "Spoderman 2 ",
+      "rating": "<i class=\"fas fa-star\"></i><i class=\"fas fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i><i class=\"far fa-star\"></i>",
       "id": 5
     }
   ]
